@@ -112,7 +112,7 @@ for (var i in deploy_spec) {
                                 ipv4Address: deploy_spec[i].folder[folder_index].virtualmachine[vm_index].ip,
                                 ipv4Netmask: deploy_spec[i].folder[folder_index].ipv4netmask
                             }
-                        ],
+                        ]
                     }
                 }
             })
