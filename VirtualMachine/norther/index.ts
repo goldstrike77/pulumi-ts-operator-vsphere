@@ -10,7 +10,7 @@ const deploy_spec = [
                 tags: ["norther", "k8s"], // [Project, Group]
                 datastore: "ds_node01",
                 template: "template_Rocky8",
-                network: "VMNetwork",
+                network: "VM Network",
                 domain: "home.local",
                 gateway: "192.168.0.1",
                 ipv4netmask: 24,
