@@ -56,6 +56,7 @@ for (var i in deploy_spec) {
         // Create resource pools on vSphere clusters.
         let resourcepool = new vsphere.ResourcePool(deploy_spec[i].datacenter + "-" + deploy_spec[i].category[category_index].cluster + "-" + deploy_spec[i].category[category_index].tags[0] + "-" + deploy_spec[i].category[category_index].tags[1], {
             parentResourcePoolId: cluster.apply(cluster => cluster.resourcePoolId),
+            name: deploy_spec[i].category[category_index].tags[0] + "-" + deploy_spec[i].category[category_index].tags[1]
         });
         // Create a Folder Resource.
         let folderproject = new vsphere.Folder("project-folder-" + deploy_spec[i].category[category_index].tags[0] + "-" + deploy_spec[i].category[category_index].tags[1], {
