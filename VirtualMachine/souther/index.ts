@@ -9,7 +9,7 @@ const deploy_spec = [
                 cluster: "Cluster",
                 tags: ["souther", "k8s"], // [Project, Group]
                 datastore: "ds_node02",
-                template: "template_CentOS7",
+                template: "template_Rocky8",
                 network: "VM Network",
                 domain: "home.local",
                 gateway: "192.168.0.1",
