@@ -1,0 +1,9 @@
+encryptionsalt: v1:oW4cULEwZts=:v1:e4+JUc/tgR/iY+EN:EHvizAXBhXuqu0q0YN4VgQmv2zxTRQ==
+config:
+  vsphere:adminPassword:
+    secure: v1:I1YcEFUMDvd5tvvr:zXKdlLwq4G2/+UqowDQsekXKcjbhEPYm
+  vsphere:allowUnverifiedSsl: "true"
+  vsphere:password:
+    secure: v1:Ey+4OtEVUdDu6gP0:cgNFpQWA/maMGddmUWJFa8DRLzK2+7Ni3yyjoQ==
+  vsphere:user: administrator@vsphere.local
+  vsphere:vsphere_server: vcenter.esxi.lab
