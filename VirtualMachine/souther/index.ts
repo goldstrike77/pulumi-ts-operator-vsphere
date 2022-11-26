@@ -7,7 +7,7 @@ const deploy_spec = [
         category: [
             {
                 cluster: "Cluster",
-                tags: ["souther", "k8s"], // [Project, Group]
+                tags: ["souther", "linux"], // [Project, Group]
                 datastore: "ds_node02",
                 template: "template_Rocky8",
                 network: "VM Network",
@@ -16,11 +16,14 @@ const deploy_spec = [
                 ipv4netmask: 24,
                 dns: ["192.168.0.1"],
                 virtualmachine: [
-                    { name: "node05", ip: "192.168.0.125", cpus: 12, memory: 32768, disk: 300 },
-                    { name: "node06", ip: "192.168.0.126", cpus: 12, memory: 32768, disk: 300 },
-                    { name: "node07", ip: "192.168.0.127", cpus: 12, memory: 32768, disk: 300 },
-                    { name: "node08", ip: "192.168.0.128", cpus: 12, memory: 32768, disk: 300 },
-                    { name: "node09", ip: "192.168.0.129", cpus: 12, memory: 32768, disk: 300 }
+                    { name: "node10", ip: "192.168.0.150", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node11", ip: "192.168.0.151", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node12", ip: "192.168.0.152", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node13", ip: "192.168.0.153", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node14", ip: "192.168.0.154", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node15", ip: "192.168.0.155", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node16", ip: "192.168.0.156", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node17", ip: "192.168.0.157", cpus: 12, memory: 32768, disk: 200 },
                 ]
             },
         ]
