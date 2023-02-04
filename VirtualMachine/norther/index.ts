@@ -3,12 +3,12 @@ import * as vsphere from "@pulumi/vsphere"
 
 const deploy_spec = [
     {
-        datacenter: "Home",
+        datacenter: "Demo",
         category: [
             {
-                cluster: "Cluster",
+                cluster: "Deployment",
                 tags: ["norther", "linux"], // [Project, Group]
-                datastore: "ds_node01",
+                datastore: "ds-node01",
                 template: "template_Rocky8",
                 network: "VM Network",
                 domain: "home.local",
@@ -16,13 +16,14 @@ const deploy_spec = [
                 ipv4netmask: 24,
                 dns: ["192.168.0.1"],
                 virtualmachine: [
-                    { name: "node00", ip: "192.168.0.120", cpus: 12, memory: 32768, disk: 250 },
-                    { name: "node01", ip: "192.168.0.121", cpus: 12, memory: 32768, disk: 250 },
-                    { name: "node02", ip: "192.168.0.122", cpus: 12, memory: 32768, disk: 250 },
-                    { name: "node03", ip: "192.168.0.123", cpus: 12, memory: 32768, disk: 250 },
-                    { name: "node04", ip: "192.168.0.124", cpus: 12, memory: 32768, disk: 250 },
-                    { name: "node05", ip: "192.168.0.125", cpus: 12, memory: 32768, disk: 250 },
-                    { name: "node06", ip: "192.168.0.126", cpus: 12, memory: 32768, disk: 250 }
+                    { name: "node00", ip: "192.168.0.120", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node01", ip: "192.168.0.121", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node02", ip: "192.168.0.122", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node03", ip: "192.168.0.123", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node04", ip: "192.168.0.124", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node05", ip: "192.168.0.125", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node06", ip: "192.168.0.126", cpus: 12, memory: 32768, disk: 200 },
+                    { name: "node07", ip: "192.168.0.127", cpus: 12, memory: 32768, disk: 200 }
                 ]
             },
         ]

@@ -3,17 +3,25 @@ import * as vsphere from "@pulumi/vsphere"
 
 const deploy_spec = [
     {
-        datacenter: "Home",
+        datacenter: "Demo",
         cluster: [
             {
-                name: "Cluster",
-                drsEnabled: false,
+                name: "Management",
+                drsEnabled: true,
+                haEnabled: false,
+                host: [
+                    { name: "node03.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" }
+                ]
+            },
+            {
+                name: "Deployment",
+                drsEnabled: true,
                 haEnabled: false,
                 host: [
                     { name: "node01.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
                     { name: "node02.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" }
                 ]
-            },
+            }
         ]
     }
 ]

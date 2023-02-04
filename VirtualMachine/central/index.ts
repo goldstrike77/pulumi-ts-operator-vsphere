@@ -6,9 +6,9 @@ const deploy_spec = [
         datacenter: "Demo",
         category: [
             {
-                cluster: "Deployment",
-                tags: ["souther", "linux"], // [Project, Group]
-                datastore: "ds-node02",
+                cluster: "Management",
+                tags: ["central", "linux"], // [Project, Group]
+                datastore: "ds-node03",
                 template: "template_Rocky8",
                 network: "VM Network",
                 domain: "home.local",
@@ -16,14 +16,7 @@ const deploy_spec = [
                 ipv4netmask: 24,
                 dns: ["192.168.0.1"],
                 virtualmachine: [
-                    { name: "node10", ip: "192.168.0.150", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node11", ip: "192.168.0.151", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node12", ip: "192.168.0.152", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node13", ip: "192.168.0.153", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node14", ip: "192.168.0.154", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node15", ip: "192.168.0.155", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node16", ip: "192.168.0.156", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node17", ip: "192.168.0.157", cpus: 12, memory: 32768, disk: 200 }
+                    { name: "node20", ip: "192.168.0.160", cpus: 12, memory: 16384, disk: 500 }
                 ]
             },
         ]
