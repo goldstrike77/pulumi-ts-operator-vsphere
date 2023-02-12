@@ -8,7 +8,7 @@ const deploy_spec = [
             {
                 cluster: "Deployment",
                 tags: ["souther", "linux"], // [Project, Group]
-                datastore: "ds-node02",
+                datastore: "Deployment-ds-node02",
                 template: "template_Rocky8",
                 network: "VM Network",
                 domain: "home.local",

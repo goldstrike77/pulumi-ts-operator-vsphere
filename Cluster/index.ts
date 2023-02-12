@@ -19,7 +19,8 @@ const deploy_spec = [
                 haEnabled: false,
                 host: [
                     { name: "node01.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
-                    { name: "node02.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" }
+                    { name: "node02.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
+                    { name: "node04.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" }
                 ]
             }
         ]

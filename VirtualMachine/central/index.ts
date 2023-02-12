@@ -8,7 +8,7 @@ const deploy_spec = [
             {
                 cluster: "Management",
                 tags: ["central", "linux"], // [Project, Group]
-                datastore: "ds-node03",
+                datastore: "Management-ds-node03",
                 template: "template_Rocky8",
                 network: "VM Network",
                 domain: "home.local",
@@ -16,7 +16,10 @@ const deploy_spec = [
                 ipv4netmask: 24,
                 dns: ["192.168.0.1"],
                 virtualmachine: [
-                    { name: "node20", ip: "192.168.0.160", cpus: 12, memory: 16384, disk: 500 }
+                    { name: "node20", ip: "192.168.0.160", cpus: 8, memory: 7372, disk: 200 },
+                    { name: "node21", ip: "192.168.0.161", cpus: 8, memory: 7372, disk: 200 },
+                    { name: "node22", ip: "192.168.0.162", cpus: 8, memory: 7372, disk: 200 },
+                    { name: "node23", ip: "192.168.0.163", cpus: 8, memory: 7372, disk: 200 }
                 ]
             },
         ]
