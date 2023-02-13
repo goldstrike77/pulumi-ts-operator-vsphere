@@ -6,14 +6,6 @@ const deploy_spec = [
         datacenter: "Demo",
         cluster: [
             {
-                name: "Management",
-                drsEnabled: true,
-                haEnabled: false,
-                host: [
-                    { name: "node03.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" }
-                ]
-            },
-            {
                 name: "Deployment",
                 drsEnabled: true,
                 haEnabled: false,
