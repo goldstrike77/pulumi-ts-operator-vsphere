@@ -26,6 +26,20 @@ const deploy_spec = [
                     { name: "node07", ip: "192.168.0.127", cpus: 12, memory: 32768, disk: 200 }
                 ]
             },
+            {
+                cluster: "Deployment",
+                tags: ["storage", "linux"], // [Project, Group]
+                datastore: "Deployment-ds-node04",
+                template: "template_Rocky8",
+                network: "VM Network",
+                domain: "home.local",
+                gateway: "192.168.0.1",
+                ipv4netmask: 24,
+                dns: ["192.168.0.1"],
+                virtualmachine: [
+                    { name: "node30", ip: "192.168.0.169", cpus: 2, memory: 4096, disk: 300 }
+                ]
+            },
         ]
     }
 ]
