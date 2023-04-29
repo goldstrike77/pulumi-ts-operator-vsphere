@@ -6,22 +6,19 @@ const deploy_spec = [
         datacenter: "Demo",
         category: [
             {
-                cluster: "Management",
-                tags: ["central", "linux"], // [Project, Group]
-                datastore: "Management-ds-node03",
-                template: "template_Rocky8",
+                cluster: "Deployment",
+                tags: ["storage", "linux"], // [Project, Group]
+                datastore: "Deployment-ds-node04",
+                template: "template-Rocky8",
                 network: "VM Network",
                 domain: "home.local",
                 gateway: "192.168.0.1",
                 ipv4netmask: 24,
                 dns: ["192.168.0.1"],
                 virtualmachine: [
-                    { name: "node20", ip: "192.168.0.160", cpus: 8, memory: 7372, disk: 200 },
-                    { name: "node21", ip: "192.168.0.161", cpus: 8, memory: 7372, disk: 200 },
-                    { name: "node22", ip: "192.168.0.162", cpus: 8, memory: 7372, disk: 200 },
-                    { name: "node23", ip: "192.168.0.163", cpus: 8, memory: 7372, disk: 200 }
+                    { name: "node30", ip: "192.168.0.169", cpus: 2, memory: 4096, disk: 200, thin: true }
                 ]
-            },
+            }
         ]
     }
 ]
@@ -108,14 +105,14 @@ for (var i in deploy_spec) {
                         unitNumber: 0,
                         size: template.disks[0].size,
                         eagerlyScrub: template.disks[0].eagerlyScrub,
-                        thinProvisioned: template.disks[0].thinProvisioned,
+                        thinProvisioned: template.disks[0].thinProvisioned
                     },
                     {
                         label: "disk1",
                         unitNumber: 1,
                         size: deploy_spec[i].category[category_index].virtualmachine[vm_index].disk,
                         eagerlyScrub: template.disks[0].eagerlyScrub,
-                        thinProvisioned: template.disks[0].thinProvisioned,
+                        thinProvisioned: deploy_spec[i].category[category_index].virtualmachine[vm_index].thin
                     }
                 ],
                 clone: {

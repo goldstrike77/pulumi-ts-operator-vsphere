@@ -9,21 +9,21 @@ const deploy_spec = [
                 cluster: "Deployment",
                 tags: ["souther", "linux"], // [Project, Group]
                 datastore: "Deployment-ds-node02",
-                template: "template_Rocky8",
+                template: "template-Rocky8",
                 network: "VM Network",
                 domain: "home.local",
                 gateway: "192.168.0.1",
                 ipv4netmask: 24,
                 dns: ["192.168.0.1"],
                 virtualmachine: [
-                    { name: "node10", ip: "192.168.0.150", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node11", ip: "192.168.0.151", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node12", ip: "192.168.0.152", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node13", ip: "192.168.0.153", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node14", ip: "192.168.0.154", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node15", ip: "192.168.0.155", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node16", ip: "192.168.0.156", cpus: 12, memory: 32768, disk: 200 },
-                    { name: "node17", ip: "192.168.0.157", cpus: 12, memory: 32768, disk: 200 }
+                    { name: "node10", ip: "192.168.0.150", cpus: 10, memory: 32768, disk: 150, thin: true },
+                    { name: "node11", ip: "192.168.0.151", cpus: 10, memory: 32768, disk: 150, thin: true },
+                    { name: "node12", ip: "192.168.0.152", cpus: 10, memory: 32768, disk: 150, thin: true },
+                    { name: "node13", ip: "192.168.0.153", cpus: 10, memory: 32768, disk: 150, thin: true },
+                    { name: "node14", ip: "192.168.0.154", cpus: 10, memory: 32768, disk: 150, thin: true },
+                    { name: "node15", ip: "192.168.0.155", cpus: 10, memory: 32768, disk: 150, thin: true },
+                    { name: "node16", ip: "192.168.0.156", cpus: 10, memory: 32768, disk: 150, thin: true },
+                    { name: "node17", ip: "192.168.0.157", cpus: 10, memory: 32768, disk: 150, thin: true }
                 ]
             },
         ]
@@ -112,14 +112,14 @@ for (var i in deploy_spec) {
                         unitNumber: 0,
                         size: template.disks[0].size,
                         eagerlyScrub: template.disks[0].eagerlyScrub,
-                        thinProvisioned: template.disks[0].thinProvisioned,
+                        thinProvisioned: template.disks[0].thinProvisioned
                     },
                     {
                         label: "disk1",
                         unitNumber: 1,
                         size: deploy_spec[i].category[category_index].virtualmachine[vm_index].disk,
                         eagerlyScrub: template.disks[0].eagerlyScrub,
-                        thinProvisioned: template.disks[0].thinProvisioned,
+                        thinProvisioned: deploy_spec[i].category[category_index].virtualmachine[vm_index].thin
                     }
                 ],
                 clone: {
