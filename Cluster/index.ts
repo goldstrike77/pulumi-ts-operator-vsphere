@@ -8,11 +8,14 @@ const deploy_spec = [
             {
                 name: "Deployment",
                 drsEnabled: true,
-                haEnabled: false,
+                haEnabled: true,
+                vsanEnabled: true,
+                vsanCompressionEnabled: false,
+                vsanDedupEnabled: false,
                 host: [
                     { name: "node01.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
                     { name: "node02.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
-                    { name: "node04.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" }
+                    { name: "node04.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
                 ]
             }
         ]
@@ -29,7 +32,10 @@ for (var i in deploy_spec) {
             name: deploy_spec[i].cluster[cluster_index].name,
             datacenterId: datacenter.moid,
             drsEnabled: deploy_spec[i].cluster[cluster_index].drsEnabled,
-            haEnabled: deploy_spec[i].cluster[cluster_index].haEnabled
+            haEnabled: deploy_spec[i].cluster[cluster_index].haEnabled,
+            vsanEnabled: deploy_spec[i].cluster[cluster_index].vsanEnabled,
+            vsanCompressionEnabled: deploy_spec[i].cluster[cluster_index].vsanCompressionEnabled,
+            vsanDedupEnabled: deploy_spec[i].cluster[cluster_index].vsanDedupEnabled
         }, { dependsOn: [datacenter] });
         for (var host_index in deploy_spec[i].cluster[cluster_index].host) {
             let host = new vsphere.Host(deploy_spec[i].cluster[cluster_index].host[host_index].name, {
