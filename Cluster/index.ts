@@ -7,8 +7,8 @@ const deploy_spec = [
         cluster: [
             {
                 name: "Deployment",
-                drsEnabled: true,
-                haEnabled: true,
+                drsEnabled: false,
+                haEnabled: false,
                 vsanEnabled: true,
                 vsanCompressionEnabled: false,
                 vsanDedupEnabled: false,
