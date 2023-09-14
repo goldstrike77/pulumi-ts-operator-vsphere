@@ -14,9 +14,15 @@ const deploy_spec = [
                 vsanDedupEnabled: false,
                 host: [
                     { name: "node01.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
-                    { name: "node02.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
-                    { name: "node04.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" },
+                    { name: "node02.esxi.lab", user: "root", password: "2ZaD8UP3V^u9" }
                 ]
+            }
+        ],
+        vds: [
+            {
+                name: "vSwitchGuest",
+                hosts: ["node01.esxi.lab", "node02.esxi.lab"],
+                nic: "vmnic0"
             }
         ]
     }
@@ -27,6 +33,7 @@ for (var i in deploy_spec) {
     let datacenter = new vsphere.Datacenter(deploy_spec[i].datacenter, {
         name: deploy_spec[i].datacenter
     });
+    // Create Compute Cluster Resource.
     for (var cluster_index in deploy_spec[i].cluster) {
         let computecluster = new vsphere.ComputeCluster(deploy_spec[i].cluster[cluster_index].name, {
             name: deploy_spec[i].cluster[cluster_index].name,
@@ -46,5 +53,12 @@ for (var i in deploy_spec) {
                 cluster: computecluster.id
             });
         }
+    }
+    // Create Distributed Virtual Switch Resource.
+    for (var vds_index in deploy_spec[i].vds) {
+        let vds = new vsphere.DistributedVirtualSwitch(deploy_spec[i].cluster[vds_index].name, {
+            datacenterId: datacenter.moid,
+            name: deploy_spec[i].vds[vds_index].name
+        });
     }
 }
